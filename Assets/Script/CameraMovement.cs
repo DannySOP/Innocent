@@ -63,7 +63,7 @@ public class CameraMovement : MonoBehaviour
 
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
-            float newFOV = camera.fieldOfView + deltaMagnitudeDiff * zoomSpeed * 0.1f;
+            float newFOV = camera.fieldOfView + deltaMagnitudeDiff * zoomSpeed * 0.01f;
             newFOV = Mathf.Clamp(newFOV, minFOV, maxFOV);
             camera.fieldOfView = newFOV;
         }

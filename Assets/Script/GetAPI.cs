@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using static WebRequest;
 
 public class GetAPI : MonoBehaviour
 {
     // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
     public class Attributes
     {
-        public string title { get; set; }
         public string description { get; set; }
+        public string title { get; set; }
         public string slug { get; set; }
         public DateTime createdAt { get; set; }
         public DateTime updatedAt { get; set; }
         public DateTime publishedAt { get; set; }
+        public Metadata metadata { get; set; }
         public List<Block> blocks { get; set; }
         public string name { get; set; }
         public object alternativeText { get; set; }
@@ -24,23 +26,21 @@ public class GetAPI : MonoBehaviour
     {
         public int id { get; set; }
         public string __component { get; set; }
-        public string heading { get; set; }
-        public string text { get; set; }
-        public Link link { get; set; }
         public string description { get; set; }
-        public Image image { get; set; }
-        public List<Card> card { get; set; }
-        public string name { get; set; }
-        public List<Plan> plan { get; set; }
         public string title { get; set; }
+        public Link link { get; set; }
+        public List<Card> card { get; set; }
+        public List<Library> library { get; set; }
+        public string descriiption { get; set; }
+        public Image image { get; set; }
     }
 
     public class Card
     {
         public int id { get; set; }
-        public string heading { get; set; }
+        public string title { get; set; }
         public string description { get; set; }
-        public Images images { get; set; }
+        public Image image { get; set; }
     }
 
     public class Data
@@ -54,16 +54,18 @@ public class GetAPI : MonoBehaviour
         public Data data { get; set; }
     }
 
-    public class Images
+    public class Library
     {
-        public Data data { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public Image image { get; set; }
     }
 
     public class Link
     {
         public int id { get; set; }
-        public string title { get; set; }
-        public string link { get; set; }
+        public string content { get; set; }
         public bool isExternal { get; set; }
         public string type { get; set; }
     }
@@ -71,6 +73,19 @@ public class GetAPI : MonoBehaviour
     public class Meta
     {
         public Pagination pagination { get; set; }
+    }
+
+    public class Metadata
+    {
+        public int id { get; set; }
+        public string metaTitle { get; set; }
+        public string metaDescription { get; set; }
+        public MetaImage metaImage { get; set; }
+    }
+
+    public class MetaImage
+    {
+        public List<DataMap> data { get; set; }
     }
 
     public class Pagination
@@ -81,25 +96,11 @@ public class GetAPI : MonoBehaviour
         public int total { get; set; }
     }
 
-    public class Plan
-    {
-        public int id { get; set; }
-        public string planType { get; set; }
-        public string planDescription { get; set; }
-        public string planPrice { get; set; }
-        public bool isFeatured { get; set; }
-        public Services services { get; set; }
-        public Link link { get; set; }
-    }
-
     public class Root
     {
-        public List<Data> data { get; set; }
+        public List<DataMap> data { get; set; }
         public Meta meta { get; set; }
     }
 
-    public class Services
-    {
-        public List<Data> data { get; set; }
-    }
+
 }

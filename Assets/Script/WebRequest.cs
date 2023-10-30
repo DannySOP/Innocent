@@ -1,8 +1,10 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Profiling.Memory.Experimental;
 using static GetAPI;
 
 public class WebRequest : MonoBehaviour
@@ -21,7 +23,7 @@ public class WebRequest : MonoBehaviour
         }
     }
 
-    public string apiURL = "http://localhost:1337/api/landing-pages";
+    public string apiURL = "http://localhost:1337/api/metaverses";
     public DataWrapper dataWrapper;
 
     [System.Serializable]
@@ -41,12 +43,13 @@ public class WebRequest : MonoBehaviour
     [System.Serializable]
     public class Attributes
     {
-        public string title;
         public string description;  
+        public string title;
         public string slug;
         public DateTime createdAt;
         public DateTime updatedAt;
         public DateTime publishedAt;
+        public MetaData metaData;
         public List<Block> blocks;
         public string name;
         public object alternativeText;
@@ -54,23 +57,88 @@ public class WebRequest : MonoBehaviour
     }
 
     [System.Serializable]
-    public class Block
+    public class MetaData
     {
         public int id;
-        public string __component;
-        public string heading;
-        public string text;
-        public Link link;
-        public string description;
-        public GetMedia image;
-        public List<Card> card;
-        public string name;
-        public List<Plan> plan;
-        public string title;
+        public string metaTitle;
+        public string metaDescription;
+        public MetaImage metaImage;
+        public List<DataMap> data;
+    }
+
+    [System.Serializable]
+    public class MetaImage
+    {
+        public List<DataMap> data;
     }
 
 
     [System.Serializable]
+    public class Block
+    {
+        public int id;
+        public string __component;
+        /*public string heading;*/
+        public string description;
+        public string title;
+        public Link link;
+        /*public GetMedia image;*/
+        public List<Card> card;
+        public List<Library> library;
+        public string name;
+        /*public List<Plan> plan;*/
+    }
+
+    [System.Serializable]
+    public class Link
+    {
+        public int id;
+        public string content;
+        public bool isExternal;
+        public string type;
+    }
+
+    [System.Serializable]
+    public class Card
+    {
+        public int id;
+        public string title;
+        public string description;
+        public GetMedia image;
+    }
+
+    [System.Serializable]
+    public class Library
+    {
+        public int id;
+        public string title;
+        public string description;
+        public GetMedia image;
+    }
+
+    /*[System.Serializable]
+    public class Image
+    {
+        public List<MediaData> mediaData;
+    }
+
+    [System.Serializable]
+    public class MediaData
+    {
+        public int id;
+        public MediaAttributes mediaAttributes;
+    }
+
+    [System.Serializable]
+    public class MediaAttributes
+    {
+        public string name;
+        public string alternativeText;
+        public string url;
+    }*/
+
+
+    /*[System.Serializable]
     public class LandingPageLink
     {
         public int id;
@@ -94,7 +162,7 @@ public class WebRequest : MonoBehaviour
     public class LandingPagesResponse
     {
         public List<LandingPage> data;
-    }
+    }*/
 
     void Start()
     {
@@ -134,10 +202,10 @@ public class WebRequest : MonoBehaviour
                 Debug.Log("Desc: " + firstLandingPage.attributes.description);
                 Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].id);
                 Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].__component);
-                Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].heading);
-                Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].text);
+                Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].description);
+                Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].title);
 
-                Debug.Log("Img" + firstLandingPage.attributes.blocks[3].image.data.attributes.url);
+                /*Debug.Log("Img" + firstLandingPage.attributes.blocks[3].image.data.attributes.url);*/
                 /*Debug.Log("Component: " + firstLandingPage.text);
                 Debug.Log("Heading: " + firstLandingPage.heading);
                 Debug.Log("Text: " + firstLandingPage.text);

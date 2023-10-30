@@ -7,10 +7,20 @@ using UnityEngine.UI;
 
 public class ShowMedia : MonoBehaviour
 {
-    /*public RawImage imageTarget;*/
-    public void ShowImageOnScreen(RawImage imageTarget)
+    public RawImage imageTarget;
+    public int blockNumber;
+    public int cardNumber;
+
+    private void Start()
     {
-        StartCoroutine(SetImageCoroutine("http://localhost:1337" + WebRequest.Instance.dataWrapper.data[0].attributes.blocks[1].image.data.attributes.url, imageTarget));
+        imageTarget = GetComponent<RawImage>();
+        
+        StartCoroutine(SetImageCoroutine("http://localhost:1337" + WebRequest.Instance.dataWrapper.data[0].attributes.blocks[blockNumber].card[cardNumber].image.data.attributes.url, imageTarget));
+    }
+
+    public void ShowImageOnScreen()
+    {
+        StartCoroutine(SetImageCoroutine("http://localhost:1337" + WebRequest.Instance.dataWrapper.data[0].attributes.blocks[blockNumber].card[cardNumber].image.data.attributes.url, imageTarget));
     }
 
     private IEnumerator SetImageCoroutine(string url, RawImage img, AspectRatioFitter ratio = null)

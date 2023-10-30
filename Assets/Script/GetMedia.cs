@@ -11,6 +11,7 @@ public class GetMedia
     [System.Serializable]
     public class photoData
     {
+        public int id;
         public photoAttributes attributes;
     }
 
@@ -19,6 +20,7 @@ public class GetMedia
     public class photoAttributes
     {
         public string name;
+        public string alternativeText;
         public string url;
     }
 }
