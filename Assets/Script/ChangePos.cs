@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// test git 2
+
 public class ChangePos : MonoBehaviour
 {
     public float transitionFOV;
