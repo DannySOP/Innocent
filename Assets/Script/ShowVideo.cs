@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -11,20 +12,15 @@ public class ShowVideo : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public Button panelButton;
-    public int blockNumber;
-    public int libraryNumber;
+    public int dataNumber;
+    public int aNumber;
 
     private void Start()
     {
         videoPlayer = GetComponentInChildren<VideoPlayer>();
         panelButton = GetComponent<Button>();
 
-        StartCoroutine(CallVideoCoroutine("http://localhost:1337" + WebRequest.Instance.dataWrapper.data[0].attributes.blocks[blockNumber].library[libraryNumber].image.data.attributes.url, videoPlayer));
-    }
-
-    public void CallVideo()
-    {
-        StartCoroutine(CallVideoCoroutine("http://localhost:1337" + WebRequest.Instance.dataWrapper.data[0].attributes.blocks[blockNumber].library[libraryNumber].image.data.attributes.url, videoPlayer));
+        StartCoroutine(CallVideoCoroutine(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url, videoPlayer));
     }
 
     private IEnumerator CallVideoCoroutine(string url, VideoPlayer video)

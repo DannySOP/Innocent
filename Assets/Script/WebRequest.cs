@@ -195,7 +195,7 @@ public class WebRequest : MonoBehaviour
             if (response != null && response.data != null && response.data.Count > 0)
             {
                 // Access the specific part of JSON you mentioned
-                var firstLandingPage = response.data[0];
+                /*var firstLandingPage = response.data[0];
 
                 Debug.Log("ID: " + firstLandingPage.id);
                 Debug.Log("Title: " + firstLandingPage.attributes.title);
@@ -203,7 +203,7 @@ public class WebRequest : MonoBehaviour
                 Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].id);
                 Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].__component);
                 Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].description);
-                Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].title);
+                Debug.Log("Desc: " + firstLandingPage.attributes.blocks[3].title);*/
 
                 /*Debug.Log("Img" + firstLandingPage.attributes.blocks[3].image.data.attributes.url);*/
                 /*Debug.Log("Component: " + firstLandingPage.text);

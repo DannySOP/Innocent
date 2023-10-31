@@ -517,8 +517,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 985195815}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 0
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &16635319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,8 +668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1894831287}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 0
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &39047949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +751,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 39047949}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 39047948}
+        m_TargetAssemblyTypeName: ShowVideo, Assembly-CSharp
+        m_MethodName: PlayPauseVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &60252891
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,7 +1396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &134751165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1678,8 +1690,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageTarget: {fileID: 1369279496}
-  blockNumber: 1
-  cardNumber: 2
+  dataNumber: 0
+  cNumber: 0
 --- !u!114 &157408362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,7 +2201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &175063462
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3648,8 +3660,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 222160568}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 0
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &334494727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3731,7 +3743,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 334494727}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 334494726}
+        m_TargetAssemblyTypeName: ShowVideo, Assembly-CSharp
+        m_MethodName: PlayPauseVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &338072972
 GameObject:
   m_ObjectHideFlags: 0
@@ -4451,8 +4475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageTarget: {fileID: 408055746}
-  blockNumber: 1
-  cardNumber: 0
+  dataNumber: 0
+  cNumber: 0
 --- !u!1 &444054768
 GameObject:
   m_ObjectHideFlags: 0
@@ -5872,8 +5896,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 137100889}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &702582690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6817,8 +6841,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1236895356}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &787868691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7291,8 +7315,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1941110665}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &818294635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7858,6 +7882,7 @@ GameObject:
   - component: {fileID: 914376966}
   - component: {fileID: 914376968}
   - component: {fileID: 914376967}
+  - component: {fileID: 914376969}
   m_Layer: 5
   m_Name: Panel (1)
   m_TagString: Untagged
@@ -7923,6 +7948,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914376965}
   m_CullTransparentMesh: 1
+--- !u!114 &914376969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914376965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c61f10231004704e94e7d905964a1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageTarget: {fileID: 0}
+  dataNumber: 2
+  cNumber: 0
 --- !u!1 &915660640
 GameObject:
   m_ObjectHideFlags: 0
@@ -9177,8 +9217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1871120541}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 0
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1027126850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9566,8 +9606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1406317219}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1081498862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9661,8 +9701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 291605903}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 0
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1085204296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9744,7 +9784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1085204296}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1085204295}
+        m_TargetAssemblyTypeName: ShowVideo, Assembly-CSharp
+        m_MethodName: PlayPauseVideo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1095994787
 GameObject:
   m_ObjectHideFlags: 0
@@ -10001,6 +10053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1144588610}
   - component: {fileID: 1144588609}
+  - component: {fileID: 1144588611}
   m_Layer: 0
   m_Name: APITesting
   m_TagString: Untagged
@@ -10038,6 +10091,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1144588611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144588608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72a7982438ab444ca9d5c2fb730a072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  urlAPI: https://api-v2.svcc.io/booth-b-20-s
+  dataWrapper:
+    data: []
 --- !u!1 &1151548546
 GameObject:
   m_ObjectHideFlags: 0
@@ -10485,8 +10553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1688677661}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1187094801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10636,8 +10704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 803950471}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1191891387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10787,8 +10855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 60252893}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1196828774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10938,8 +11006,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 268359170}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1199056244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11836,8 +11904,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1631510800}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 0
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1264690699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16844,8 +16912,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 11759659}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1876083394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17199,8 +17267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 575571169}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1899682980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17688,8 +17756,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2106443164}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1933989463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18013,8 +18081,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 287362023}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &1956363036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19290,8 +19358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1746339209}
   panelButton: {fileID: 0}
-  blockNumber: 2
-  libraryNumber: 1
+  dataNumber: 0
+  aNumber: 0
 --- !u!114 &2104753951
 MonoBehaviour:
   m_ObjectHideFlags: 0
