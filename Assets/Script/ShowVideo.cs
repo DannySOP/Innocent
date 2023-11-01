@@ -12,6 +12,7 @@ public class ShowVideo : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public Button panelButton;
+    public Image thisPanel;
     public int dataNumber;
     public int aNumber;
 
@@ -19,6 +20,10 @@ public class ShowVideo : MonoBehaviour
     {
         videoPlayer = GetComponentInChildren<VideoPlayer>();
         panelButton = GetComponent<Button>();
+        thisPanel = GetComponent<Image>();
+
+        PanelTransparency();
+
         StartCoroutine(CallVideoCoroutine(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url, videoPlayer));
         Debug.Log(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url);
     }
@@ -55,5 +60,12 @@ public class ShowVideo : MonoBehaviour
         {
             videoPlayer.Pause();
         }
+    }
+
+    public void PanelTransparency()
+    {
+        Color panelColor = thisPanel.color;
+        panelColor.a = 0f;
+        thisPanel.color = panelColor;
     }
 }
