@@ -16,6 +16,15 @@ public class ChangePos : MonoBehaviour
     {
         cameraMovement = FindAnyObjectByType<CameraMovement>();
         camera = FindAnyObjectByType<Camera>();
+
+        for (int i = 0; i < target360Pos.Count; i++)
+        {
+            if (i != 12)
+            {
+                target360Pos[i].SetActive(false);
+            }
+        }
+        
     }
 
     public void OnPosChange(int i)

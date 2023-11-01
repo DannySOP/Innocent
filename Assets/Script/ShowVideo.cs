@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -13,11 +14,15 @@ public class ShowVideo : MonoBehaviour
     public VideoPlayer videoPlayer;
     public Button panelButton;
     public Image thisPanel;
+    public GameObject thumbnailPanel;
+    public GameObject informationPopUp;
     public int dataNumber;
     public int aNumber;
 
     private void Start()
     {
+        informationPopUp.SetActive(false);
+
         videoPlayer = GetComponentInChildren<VideoPlayer>();
         panelButton = GetComponent<Button>();
         thisPanel = GetComponent<Image>();
@@ -26,6 +31,17 @@ public class ShowVideo : MonoBehaviour
 
         StartCoroutine(CallVideoCoroutine(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url, videoPlayer));
         Debug.Log(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url);
+    }
+
+    private void Update()
+    {
+        if(!informationPopUp.active)
+        {
+            if(videoPlayer.isPrepared)
+            {
+                informationPopUp.SetActive(true);
+            }
+        }
     }
 
     public void GetVideo()
@@ -59,6 +75,13 @@ public class ShowVideo : MonoBehaviour
         else if(videoPlayer.isPlaying)
         {
             videoPlayer.Pause();
+        }
+        if (videoPlayer.isPrepared)
+        {
+            if (thumbnailPanel.active)
+            {
+                thumbnailPanel.SetActive(false);
+            }
         }
     }
 
