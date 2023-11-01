@@ -19,8 +19,14 @@ public class ShowVideo : MonoBehaviour
     {
         videoPlayer = GetComponentInChildren<VideoPlayer>();
         panelButton = GetComponent<Button>();
-
         StartCoroutine(CallVideoCoroutine(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url, videoPlayer));
+        Debug.Log(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url);
+    }
+
+    public void GetVideo()
+    {
+        StartCoroutine(CallVideoCoroutine(WebRequest2.webInstance.dataWrapper.data[dataNumber].A[aNumber].video_url, videoPlayer));
+        Debug.Log("jalan");
     }
 
     private IEnumerator CallVideoCoroutine(string url, VideoPlayer video)
@@ -34,7 +40,6 @@ public class ShowVideo : MonoBehaviour
         }
         else
         {
-            // Assuming you have a RawImage component to display the video on
             video.url = url;
             video.Prepare();
         }

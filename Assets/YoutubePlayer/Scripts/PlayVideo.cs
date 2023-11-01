@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -8,7 +7,6 @@ namespace YoutubePlayer
 {
     public class PlayVideo : MonoBehaviour
     {
-        [SerializeField] TMP_Text buttonText;
         public VideoPlayer videoPlayer;
 
         Button m_Button;
@@ -28,25 +26,6 @@ namespace YoutubePlayer
         public void Play()
         {
             videoPlayer.Play();
-        }
-
-        public void Pause()
-        {
-            videoPlayer.Pause();
-        }
-
-        public void PlayPausePressed()
-        {
-            if (videoPlayer.isPlaying)
-            {
-                videoPlayer.Pause();
-                buttonText.text = "Play";
-            }
-            else if (!videoPlayer.isPlaying)
-            {
-                videoPlayer.Play();
-                buttonText.text = "Pause";
-            }
         }
 
         void OnDestroy()

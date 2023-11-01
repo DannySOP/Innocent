@@ -156,15 +156,19 @@ public class WebRequest2 : MonoBehaviour
 
     }
 
+
     public static string WrapToClass(string source, string topClass)
     {
         return string.Format("{{ \"{0}\": {1}}}", topClass, source);
     }
 
+    public List<ShowVideo> showVideo = new List<ShowVideo>();
     void Start()
     {
         StartCoroutine(FetchDataFromAPI());
-    }
+
+        FindShowVideoComponents();
+    }   
 
     IEnumerator FetchDataFromAPI()
     {
@@ -181,8 +185,27 @@ public class WebRequest2 : MonoBehaviour
             string jsonResponse = webRequest.downloadHandler.text;
             string jsonWrap = WrapToClass(jsonResponse, "data");
             DataWrapper response = JsonUtility.FromJson<DataWrapper>(jsonWrap);
-            Debug.Log(jsonResponse);
+            /*Debug.Log(jsonResponse);*/
             dataWrapper = response;
         }
+    }
+
+    public void FindShowVideoComponents()
+    {
+        showVideo.Clear(); // Clear the list to avoid duplicates
+
+        // Find all ShowVideo components in the entire scene, including inactive ones
+        ShowVideo[] foundVideos = Resources.FindObjectsOfTypeAll<ShowVideo>();
+
+        // Add them to the showVideo list
+        showVideo.AddRange(foundVideos);
+    }
+
+    public void GetAllVideo()
+    {
+        /*foreach (ShowVideo showVideo in showVideo)
+        {
+            showVideo.GetVideo();
+        }*/
     }
 }

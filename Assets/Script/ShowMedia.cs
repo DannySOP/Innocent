@@ -18,7 +18,7 @@ public class ShowMedia : MonoBehaviour
         StartCoroutine(SetImageCoroutine(WebRequest2.webInstance.dataWrapper.data[dataNumber].C[cNumber].image.formats.large.url, imageTarget));
     }
 
-    private IEnumerator SetImageCoroutine(string url, RawImage img, AspectRatioFitter ratio = null)
+    private IEnumerator SetImageCoroutine(string url, RawImage img/*, AspectRatioFitter ratio = null*/)
     {
         UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
         yield return www.SendWebRequest();
@@ -31,7 +31,7 @@ public class ShowMedia : MonoBehaviour
         {
             Texture tex = ((DownloadHandlerTexture)www.downloadHandler).texture;
             img.texture = tex;
-            ratio.aspectRatio = (float)tex.width / (float)tex.height;
+            /*ratio.aspectRatio = (float)tex.width / (float)tex.height;*/
         }
     }
 }

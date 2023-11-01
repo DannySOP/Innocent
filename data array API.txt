@@ -1,0 +1,19 @@
+yakes : 0
+smarteye : 1
+bigeye : 4
+smartcity : 3
+smartfarming : 6
+smartvillage : 5
+oca : 7
+bagidata : 8
+bigbox : 9
+mydigilearn : 10
+smarthome : 2/11
+highspeedinternet : 12
+photobooth : 13
+sprintthink : 14
+ideabox : 15
+dtral : 16
+inlet : 17/18
+indibiz store : 19
+podcast : 20
