@@ -15,13 +15,18 @@ public class ShowVideo : MonoBehaviour
     public Button panelButton;
     public Image thisPanel;
     public GameObject thumbnailPanel;
-    public GameObject informationPopUp;
+    public GameObject tapToPlayPopUp;
+    public GameObject tapToPausePopUp;
+    public GameObject loadingPopUp;
+    public bool isVideoReady = false;
     public int dataNumber;
     public int aNumber;
 
     private void Start()
     {
-        informationPopUp.SetActive(false);
+        loadingPopUp.SetActive(true);
+        tapToPlayPopUp.SetActive(false);
+        tapToPausePopUp.SetActive(false);
 
         videoPlayer = GetComponentInChildren<VideoPlayer>();
         panelButton = GetComponent<Button>();
@@ -35,11 +40,23 @@ public class ShowVideo : MonoBehaviour
 
     private void Update()
     {
-        if(!informationPopUp.active)
+        if(videoPlayer.isPrepared)
         {
-            if(videoPlayer.isPrepared)
+            isVideoReady = true;
+        }
+
+        if(isVideoReady)
+        {
+            loadingPopUp.SetActive(false);
+            if(!videoPlayer.isPlaying)
             {
-                informationPopUp.SetActive(true);
+                tapToPausePopUp.SetActive(false);
+                tapToPlayPopUp.SetActive(true);
+            }
+            if(videoPlayer.isPlaying)
+            {
+                tapToPlayPopUp.SetActive(false);
+                tapToPausePopUp.SetActive(true);
             }
         }
     }

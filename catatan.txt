@@ -1,0 +1,30 @@
+yakes : 0
+smarteye : 1
+bigeye : 4
+smartcity : 3
+smartfarming : 6
+smartvillage : 5
+oca : 7
+bagidata : 8
+bigbox : 9
+mydigilearn : 10
+smarthome : 2/11
+highspeedinternet : 12
+photobooth : 13
+sprintthink : 14
+ideabox : 15
+dtral : 16
+inlet : 17
+indibiz store : 18
+podcast : 19
+
+fix
+(Done) 1. Video early game pake strapi, tombol skip
+2. Transisi waktu ubah
+(Done) 3. Maps, pencet jadi gede, pas jadi gede bisa pindah interplay
+(Done) 4. "Tap Screen to Play", taro atas, pas video play "Tap Screen to Pause"
+5. 360 Niko
+6. Hover pointer berubah warna
+7. BGM, pas video play bgm stop
+8. Masukin hustler
+9. UI hipster zone
