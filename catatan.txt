@@ -23,8 +23,8 @@ fix
 2. Transisi waktu ubah
 (Done) 3. Maps, pencet jadi gede, pas jadi gede bisa pindah interplay
 (Done) 4. "Tap Screen to Play", taro atas, pas video play "Tap Screen to Pause"
-5. 360 Niko
-6. Hover pointer berubah warna
+(Done?) 5. 360 Niko
+(Done) 6. Hover pointer berubah warna
 7. BGM, pas video play bgm stop
-8. Masukin hustler
-9. UI hipster zone
+(Done) 8. Masukin hacker
+(Done) 9. UI hipster zone

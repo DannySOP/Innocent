@@ -13,8 +13,9 @@ public class AutoClosePanel : MonoBehaviour
     public int dataNumber;
     public int aNumber;
     public VideoPlayer videoPlayer;
+    public CameraMovement cameraMovement;
+    public bool isVideoOver = false;
 
-    private CameraMovement cameraMovement;
     void Start()
     {
         thisPanel.SetActive(false);
@@ -35,11 +36,14 @@ public class AutoClosePanel : MonoBehaviour
         if (!videoPlayer.isLooping && !videoPlayer.isPlaying && videoPlayer.time >= 51.9f)
             VideoIsOver();
 
-        if (innocentMaps.active)
-            cameraMovement.enabled = false;
+        if (isVideoOver)
+        {
+            if (innocentMaps.active)
+                cameraMovement.enabled = false;
 
-        if (!innocentMaps.active)
-            cameraMovement.enabled = true;
+            if (!innocentMaps.active)
+                cameraMovement.enabled = true;
+        }
     }
 
     public void PanelActivated()
@@ -70,6 +74,7 @@ public class AutoClosePanel : MonoBehaviour
 
     public void VideoIsOver()
     {
+        isVideoOver = true;
         thisPanel.SetActive(false);
 
         cameraMovement.enabled = true;
