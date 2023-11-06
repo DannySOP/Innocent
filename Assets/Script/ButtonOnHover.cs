@@ -23,7 +23,7 @@ public class ButtonOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         normalColor = buttonImage.color;
         hoverColor = new Color(128f / 255f, 255f / 255f, 255f / 255f, 1f);
 
-        posButton.onClick.AddListener(OnButtonClick);
+        /*posButton.onClick.AddListener(OnButtonClick);*/
 
     }
 
@@ -32,11 +32,11 @@ public class ButtonOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         /*if (EventSystem.current.IsPointerOverGameObject())
         {
             buttonImage.color = hoverColor;
-        }
+        }*/
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             buttonImage.color = normalColor;
-        }*/
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
