@@ -25,6 +25,6 @@ fix
 (Done) 4. "Tap Screen to Play", taro atas, pas video play "Tap Screen to Pause"
 (Done?) 5. 360 Niko
 (Done) 6. Hover pointer berubah warna
-7. BGM, pas video play bgm stop
+(Done) 7. BGM, pas video play bgm stop
 (Done) 8. Masukin hacker
 (Done) 9. UI hipster zone
