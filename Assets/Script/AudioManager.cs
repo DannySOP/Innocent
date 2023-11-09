@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource bgm;
     public List<VideoPlayer> videoPlayers = new List<VideoPlayer>();
 
+    public Sprite audioMutedSprite;
+    public Sprite audioUnmutedSprite;
+    public Image audioButtonImage;
     public bool IsMute { get => bgm.mute; }
     public float BgmVolume { get => bgm.volume; }
 
@@ -34,6 +38,15 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         CheckVideoPlayersStatus();
+
+        if (IsMute)
+        {
+            audioButtonImage.sprite = audioUnmutedSprite;
+        }
+        else
+        {
+            audioButtonImage.sprite = audioMutedSprite;
+        }
     }
 
     public void PlayBGM(AudioClip clip, bool loop)
@@ -62,24 +75,21 @@ public class AudioManager : MonoBehaviour
     {
         bool isAnyVideoPlaying = false;
 
-        // Check if any VideoPlayer is playing
         foreach (VideoPlayer videoPlayer in videoPlayers)
         {
             if (videoPlayer.isPlaying)
             {
                 isAnyVideoPlaying = true;
-                break; // Exit the loop as soon as a playing video is found
+                break;
             }
         }
 
         if (isAnyVideoPlaying)
         {
-            // If any VideoPlayer is playing, pause the BGM
             PauseBGM();
         }
         else
         {
-            // If no VideoPlayer is playing, resume the BGM
             ResumeBGM();
         }
     }

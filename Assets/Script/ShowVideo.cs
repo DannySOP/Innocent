@@ -75,6 +75,7 @@ public class ShowVideo : MonoBehaviour
         {
             Debug.Log(url);
             Debug.Log(www.error);
+            GetVideo();
         }
         else
         {

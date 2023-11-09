@@ -179,6 +179,7 @@ public class WebRequest2 : MonoBehaviour
         if (webRequest.isNetworkError || webRequest.isHttpError)
         {
             Debug.LogError("Error: " + webRequest.error);
+            StartCoroutine(FetchDataFromAPI());
         }
         else
         {

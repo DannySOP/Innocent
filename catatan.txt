@@ -28,3 +28,5 @@ fix
 (Done) 7. BGM, pas video play bgm stop
 (Done) 8. Masukin hacker
 (Done) 9. UI hipster zone
+==========================================================================
+

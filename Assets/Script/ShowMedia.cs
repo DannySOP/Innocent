@@ -26,6 +26,7 @@ public class ShowMedia : MonoBehaviour
         {
             Debug.Log(url);
             Debug.Log(www.error);
+            StartCoroutine(SetImageCoroutine(WebRequest2.webInstance.dataWrapper.data[dataNumber].C[cNumber].image.formats.large.url, imageTarget));
         }
         else
         {
