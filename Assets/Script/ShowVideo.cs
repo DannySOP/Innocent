@@ -69,22 +69,27 @@ public class ShowVideo : MonoBehaviour
 
     private IEnumerator CallVideoCoroutine(string url, VideoPlayer video)
     {
-        UnityWebRequest www = UnityWebRequest.Get(url);
-        yield return www.SendWebRequest();
-        if (www.result != UnityWebRequest.Result.Success)
+        bool downloadSucceeded = false;
+        while (!downloadSucceeded)
         {
-            Debug.Log(url);
-            Debug.Log(www.error);
-            GetVideo();
-        }
-        else
-        {
-            video.url = url;
-            video.Prepare();
+            UnityWebRequest www = UnityWebRequest.Get(url);
+            yield return www.SendWebRequest();
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Error downloading video:");
+                Debug.Log(url);
+                Debug.Log(www.error);
+            }
+            else
+            {
+                video.url = url;
+                video.Prepare();
+                downloadSucceeded = true; // Break the loop when download succeeds
+            }
         }
     }
-    
-    public void PlayPauseVideo()
+
+        public void PlayPauseVideo()
     {
         if(!videoPlayer.isPlaying)
         {
