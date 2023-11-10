@@ -10,6 +10,7 @@ public class HeadUIManager : MonoBehaviour
     [SerializeField] GameObject thisPanel;
     public GameObject loadingImage;
     public GameObject innocentMaps;
+    public GameObject tutorImage;
     public int dataNumber;
     public int aNumber;
     public VideoPlayer videoPlayer;
@@ -50,7 +51,7 @@ public class HeadUIManager : MonoBehaviour
 
         if (isVideoOver)
         {
-            if (innocentMaps.active)
+            if (innocentMaps.active || tutorImage.active)
             {
                 cameraMovement.enabled = false;
                 foreach (GameObject map in miniMap)
@@ -59,7 +60,7 @@ public class HeadUIManager : MonoBehaviour
                 }
             }
 
-            if (!innocentMaps.active)
+            if (!innocentMaps.active && !tutorImage.active)
             {
                 cameraMovement.enabled = true;
                 foreach (GameObject map in miniMap)
