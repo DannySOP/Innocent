@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 49ba9994463687e4b86d40fe1e584984, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.81237143, g: 0.8014108, b: 0.8076398, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9711,7 +9711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 852, y: -429.6}
+  m_AnchoredPosition: {x: 777, y: -400}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &507770704
@@ -9759,7 +9759,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 783537216}
-        m_TargetAssemblyTypeName: AutoClosePanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: HeadUIManager, Assembly-CSharp
         m_MethodName: VideoIsOver
         m_Mode: 1
         m_Arguments:
@@ -13884,10 +13884,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -13951,7 +13951,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 783537211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc49c53173910a4b8526f27296846ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 525b0642c9b64404da55eae0c20fbedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thisPanel: {fileID: 1704131003}
@@ -13961,7 +13961,7 @@ MonoBehaviour:
   dataNumber: 20
   aNumber: 2
   videoPlayer: {fileID: 1477518238}
-  cameraMovement: {fileID: 0}
+  cameraMovement: {fileID: 1578951470}
   isVideoOver: 0
   miniMap: []
 --- !u!1 &787868687
@@ -32004,7 +32004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -723, y: -429.71}
+  m_AnchoredPosition: {x: -723, y: -400}
   m_SizeDelta: {x: 270.75, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848531087
@@ -36902,7 +36902,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 57a2c74a51254a740bea384e4441915f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b321898d9bd889f49ac686556c554a7b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.7
   m_Pitch: 1

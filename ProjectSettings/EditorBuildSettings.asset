@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/360TestScene.unity
+    guid: cc8150534c9ee0141af8f0a425bb3cba
   m_configObjects: {}
